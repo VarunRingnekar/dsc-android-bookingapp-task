@@ -20,8 +20,8 @@ import java.util.Calendar;
 
 public class CreateClientActivity extends AppCompatActivity {
 
-    String clientName, clientAddress;
-    EditText etClientName, etClientAddress;
+    String clientName, clientAddress, clientEmail;
+    EditText etClientName, etClientAddress, etClientEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,7 @@ public class CreateClientActivity extends AppCompatActivity {
 
         etClientName = findViewById(R.id.editTextClientName);
         etClientAddress = findViewById(R.id.editTextClientAddress);
-
-
-
+        etClientEmail = findViewById(R.id.editTextClientEmail);
 
     }
 
@@ -40,10 +38,11 @@ public class CreateClientActivity extends AppCompatActivity {
 
         clientName = etClientName.getText().toString();
         clientAddress = etClientAddress.getText().toString();
+        clientEmail = etClientEmail.getText().toString();
 
         String currentDateTime = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
-        ClientClass clientData =  new ClientClass(clientName, clientAddress);
+        ClientClass clientData =  new ClientClass(clientName, clientAddress, clientEmail);
 
         //Uploading data under child of current date and time
 

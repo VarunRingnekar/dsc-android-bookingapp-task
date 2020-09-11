@@ -4,20 +4,22 @@ package com.example.bookingapp;
 
 public class BookingClass {
 
-    private String dateTime, clientName, clientAddress;
+    private String clientName, clientAddress, clientEmail;
+    private long dateTime;
 
     public BookingClass() {
 
     }
 
-    public BookingClass(String dateTime, String clientName, String clientAddress) {
+    public BookingClass(long dateTime, String clientName, String clientAddress, String clientEmail) {
         this.dateTime = dateTime;
 
         this.clientName = clientName;
         this.clientAddress = clientAddress;
+        this.clientEmail = clientEmail;
     }
 
-    public String getDateTime() {
+    public long getDateTime() {
         return dateTime;
     }
 
@@ -27,5 +29,9 @@ public class BookingClass {
 
     public String getClientAddress() {
         return clientAddress;
+    }
+
+    public String getClientEmail() {
+        return clientEmail;
     }
 }

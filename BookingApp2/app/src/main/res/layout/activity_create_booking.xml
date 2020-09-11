@@ -70,6 +70,28 @@
             android:layout_height="60dp">
 
             <TextView
+                android:id="@+id/tvBookingClientEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
+                android:fontFamily="@font/bubbler_one"
+                android:text="Client Email: "
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
                 android:id="@+id/tvBookingCreateDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

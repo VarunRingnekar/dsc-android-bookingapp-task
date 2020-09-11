@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:weightSum="3">
+            android:weightSum="4.5">
 
             <TextView
                 android:id="@+id/tvClientName"
@@ -43,6 +43,18 @@
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/bubbler_one"
                 android:text="abc st., XYZ society"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvClientEmail"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1.5"
+                android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/bubbler_one"
+                android:text="xyz@gmail.com"
                 android:textSize="24sp" />
 
 

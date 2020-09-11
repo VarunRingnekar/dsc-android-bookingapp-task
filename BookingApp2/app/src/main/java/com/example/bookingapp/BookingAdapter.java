@@ -10,6 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /*This is the adapter for Main activity, which shows the bookings*/
@@ -35,15 +40,18 @@ public class BookingAdapter extends RecyclerView.Adapter<BookingViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
 
-        //retrieving the dateTime and splitting to get date and time separately
+        long dateTime = bookingList.get(position).getDateTime();
 
-        String dateTime = bookingList.get(position).getDateTime();
-        String retrieveDate = dateTime.split("T")[0];
-        String retrieveTime = dateTime.split("T")[1];
-        String date = retrieveDate.split("/")[2] + "/" + retrieveDate.split("/")[1] + "/" + retrieveDate.split("/")[0];
+        Date dates = new Date(dateTime);
+
+        DateFormat simpleDate = new SimpleDateFormat("dd MMM yyyy");
+        DateFormat simpleTime = new SimpleDateFormat("HH:mm");
+
+        String date = simpleDate.format(dates);
+        String time = simpleTime.format(dates);
 
         holder.tvBookingDate.setText(date);
-        holder.tvBookingTime.setText(retrieveTime);
+        holder.tvBookingTime.setText(time);
         holder.tvBookingName.setText(bookingList.get(position).getClientName());
         holder.tvBookingAddress.setText(bookingList.get(position).getClientAddress());
 

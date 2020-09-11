@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.nio.file.attribute.PosixFileAttributes;
 import java.util.List;
 
 /*This is the adapter for client recyclerView*/
@@ -39,6 +40,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder>{
 
         holder.tvClientName.setText(clientList.get(position).getClientName());
         holder.tvClientAddress.setText(clientList.get(position).getClientAddress());
+        holder.tvClientEmail.setText(clientList.get(position).getClientEmail());
 
         holder.clientCardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +50,7 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder>{
                 Intent intent = new Intent(mContext, CreateBookingActivity.class);
                 intent.putExtra("clientName", clientList.get(position).getClientName());
                 intent.putExtra("clientAddress", clientList.get(position).getClientAddress());
+                intent.putExtra("clientEmail", clientList.get(position).getClientEmail());
 
                 mContext.startActivity(intent);
             }
@@ -63,13 +66,14 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientViewHolder>{
 
 class ClientViewHolder extends RecyclerView.ViewHolder{
 
-    TextView tvClientName, tvClientAddress;
+    TextView tvClientName, tvClientAddress, tvClientEmail;
     CardView clientCardView;
 
     public ClientViewHolder(View itemView) {
         super(itemView);
         tvClientName = itemView.findViewById(R.id.tvClientName);
         tvClientAddress = itemView.findViewById(R.id.tvClientAddress);
+        tvClientEmail = itemView.findViewById(R.id.tvClientEmail);
 
         clientCardView = itemView.findViewById(R.id.clientCardView);
 
